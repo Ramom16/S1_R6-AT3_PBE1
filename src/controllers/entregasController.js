@@ -35,7 +35,7 @@ const entregasController = {
             res.status(200).json(entregas);
         } catch (error) {
             res.status(500).json({
-                message: "Erro ao listar clientes",
+                message: "Erro ao listar entregas",
                 errorMessage: error.message
             });
         }
