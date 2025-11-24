@@ -3,7 +3,8 @@ const { entregasController } = require('../controllers/entregasController');
 
 const router = express.Router();
 
-router.get('/:idEntrega', entregasController.buscarEntrega);
-router.put('/:idEntrega/status', entregasController.atualizarStatus);
+router.get('/entregas/:idEntrega', entregasController.buscarEntrega);
+router.put('/entregas/:idEntrega/status', entregasController.atualizarStatus);
+router.get('/entregas', entregasController.buscarTodasEntregas);
 
 module.exports = router;

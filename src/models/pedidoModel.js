@@ -21,10 +21,7 @@ const pedidoModel = {
  *   1,
  *   "2025-01-10",
  *   "rápida",
- *   12.5,
- *   3.2,
- *   2.50,
- *   1.75
+ 
  * );
  *
  * // Saída esperada:
@@ -84,9 +81,9 @@ const pedidoModel = {
      *   "valorBaseKg": 1.75
      * }
      */
-    buscarPedidoPorId: async (id) => {
+    buscarPedidoPorId: async (idPedidos) => {
         const sql = 'SELECT * FROM pedidos WHERE idPedidos = ?';
-        const [rows] = await pool.query(sql, [id]);
+        const [rows] = await pool.query(sql, [idPedidos]);
         return rows[0];
     }
 };

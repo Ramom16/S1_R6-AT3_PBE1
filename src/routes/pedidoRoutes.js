@@ -3,6 +3,6 @@ const { pedidoController } = require('../controllers/pedidoController');
 
 const router = express.Router();
 
-router.post('/', pedidoController.criarPedido);
+router.post('/pedidos', pedidoController.criarPedido);
 
 module.exports = router;

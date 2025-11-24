@@ -122,7 +122,12 @@ const entregasModel = {
         const sql = 'SELECT * FROM entregas WHERE idEntregas = ?';
         const [rows] = await pool.query(sql, [idEntrega]);
         return rows[0];
-    }
+    },
+    selecionarTodasEntregas: async () => {
+        const sql = 'SELECT * FROM entregas';
+        const [rows] = await pool.query(sql);
+        return rows;
+    },
 };
 
 module.exports = { entregasModel };

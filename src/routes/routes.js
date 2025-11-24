@@ -5,8 +5,8 @@ const clienteRoutes = require('./clienteRoutes');
 const entregaRoutes = require('./entregaRoutes');
 const pedidoRoutes = require('./pedidoRoutes');
 
-router.use('/clientes', clienteRoutes);
-router.use('/entregas', entregaRoutes);
-router.use('/pedidos', pedidoRoutes);
+router.use('/', clienteRoutes);
+router.use('/', entregaRoutes);
+router.use('/', pedidoRoutes);
 
 module.exports = router;

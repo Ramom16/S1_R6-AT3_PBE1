@@ -6,10 +6,10 @@ const clienteController = {
         try {
             const { nome_completo, cpf, telefone, email, enderecoCompleto } = req.body;
 
-            // Validações básicas
-            if (!nome_completo || !cpf || !enderecoCompleto) {
+            // Validações básicas para criar o cliente
+            if (!nome_completo || !cpf || !enderecoCompleto || !email) {
                 return res.status(400).json({
-                    message: "Campos obrigatórios: nome_completo, cpf, enderecoCompleto"
+                    message: "Campos obrigatórios: nome_completo, cpf, email, enderecoCompleto"
                 });
             }
 
@@ -30,10 +30,11 @@ const clienteController = {
                 enderecoCompleto
             );
 
-            res.status(201).json({
-                message: "Cliente criado com sucesso",
-                idCliente: result.insertId
-            });
+            if (result.affectedRows === 1 && result.insertId != 0) {
+                res.status(201).json({ message: 'Registro incluído com sucesso', result: result });
+            } else {
+                throw new Error('Ocorreu um erro ao incluir o registro');
+            }
 
         } catch (error) {
             res.status(500).json({
