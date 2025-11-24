@@ -6,10 +6,11 @@ const pool = mysql.createPool({
     password: '1234',
     database: 'logisticadb',
     port: 3308,
-    waitForConnections: true, //Aguarda conexões livres
+    waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
 });
+
 
 (async () => {
     try {
@@ -17,8 +18,8 @@ const pool = mysql.createPool({
         console.log('Conectado ao MySQL');
         connection.release();
     } catch (error) {
-        console.error(`Erro ao conectar ao MySQL: ${error}`)
+        console.error(`Erro ao conectar ao MySQL: ${error}`);
     }
-})
+})(); 
 
 module.exports = pool;
