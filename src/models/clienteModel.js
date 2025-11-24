@@ -1,8 +1,3 @@
-/**
- * Módulo responsável pelas operações relacionadas aos clientes no banco de dados.
- * @module clienteModel
- */
-
 const pool = require('../config/db');
 
 const clienteModel = {

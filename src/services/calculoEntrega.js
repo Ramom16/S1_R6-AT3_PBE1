@@ -1,6 +1,5 @@
 // criei esse arquivo para justamente fazer a lógica de aplicação, ele vai processar os dados antes de enviar eles pro model ou controller
 
-
 module.exports = {
     calcularEntrega: (pedido) => {
         const valorDistancia = pedido.distanciaKm * pedido.valorBaseKm;

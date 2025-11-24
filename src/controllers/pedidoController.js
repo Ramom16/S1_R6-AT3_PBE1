@@ -1,5 +1,5 @@
 const { pedidoModel } = require('../models/pedidoModel');
-const { entregaModel } = require('../models/entregaModel');
+const { entregasModel } = require('../models/entregasModel');
 const calculo = require('../services/calculoEntrega');
 
 const pedidoController = {
@@ -20,7 +20,7 @@ const pedidoController = {
 
             const calculoEntrega = calculo.calcularEntrega(pedidoCriado);
 
-            const entregaRegistrada = await entregaModel.registrarEntrega(
+            const entregaRegistrada = await entregasModel.registrarEntrega(
                 pedidoInserido.insertId,
                 calculoEntrega
             );

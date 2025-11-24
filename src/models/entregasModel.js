@@ -1,6 +1,6 @@
 const pool = require('../config/db');
 
-const entregaModel = {
+const entregasModel = {
 
     /**
      * Registra uma entrega no banco de dados vinculada a um pedido.
@@ -28,7 +28,7 @@ const entregaModel = {
      *   valorFinal: 47
      * };
      *
-     * const resultado = await entregaModel.registrarEntrega(1, dadosEntrega);
+     * const resultado = await entregasModel.registrarEntrega(1, dadosEntrega);
      * // saída
      * {
      *   fieldCount: 0,
@@ -104,7 +104,7 @@ const entregaModel = {
      * @returns {Promise<Object|null>} Retorna o objeto da entrega ou null caso não exista
      *
      * @example
-     * const entrega = await entregaModel.buscarEntrega(10);
+     * const entrega = await entregasModel.buscarEntrega(10);
      * // Saída:
      * {
      *   idEntregas: 10,
@@ -125,4 +125,4 @@ const entregaModel = {
     }
 };
 
-module.exports = { entregaModel };
+module.exports = { entregasModel };

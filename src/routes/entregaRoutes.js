@@ -1,10 +1,9 @@
 const express = require('express');
-const { entregaController } = require('../controllers/entregaController');
+const { entregasController } = require('../controllers/entregasController');
 
 const router = express.Router();
 
-
-router.get('/:idEntrega', entregaController.buscarEntrega);
-router.put('/:idEntrega/status', entregaController.atualizarStatus);
+router.get('/:idEntrega', entregasController.buscarEntrega);
+router.put('/:idEntrega/status', entregasController.atualizarStatus);
 
 module.exports = router;
