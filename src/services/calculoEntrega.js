@@ -1,4 +1,5 @@
 // criei esse arquivo para justamente fazer a lógica de aplicação, ele vai processar os dados antes de enviar eles pro model ou controller
+// referência: https://www.rocketseat.com.br/blog/artigos/post/organizacao-pastas-react-estrutura-escalavel
 
 module.exports = {
     calcularEntrega: (pedido) => {
