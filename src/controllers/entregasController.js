@@ -1,7 +1,15 @@
 const { entregasModel } = require('../models/entregasModel');
 
 const entregasController = {
-
+    /**
+             * Retorna o produto referente ao idEntregas pesquisado
+             * Rota: get/entregas
+             * @asyn
+             * @function buscarEntrega
+             * @param {Request} req Objeto da requisição HTTP
+             * @param {Response} res Objeto da resposta HTTP
+             * @returns {Promise<Array>Object>>} Conteudo com os dados da requisição
+             */
     async buscarEntrega(req, res) {
         try {
             const id = req.params.idEntrega;
@@ -16,7 +24,15 @@ const entregasController = {
             res.status(500).json({ erro: error.message });
         }
     },
-
+    /**
+                 * Atualiza os status da Entrega
+                 * Rota: get/entregas/:idEntrega/status
+                 * @asyn
+                 * @function buscarEntrega
+                 * @param {Request} req Objeto da requisição HTTP
+                 * @param {Response} res Objeto da resposta HTTP
+                 * @returns {Promise<Array>Object>>} Conteudo com os dados da requisição
+                 */
     async atualizarStatus(req, res) {
         try {
             const id = req.params.idEntrega;
@@ -29,6 +45,15 @@ const entregasController = {
             res.status(500).json({ erro: error.message });
         }
     },
+    /**
+         * Retorna as Entregas cadastrados no banco de dados
+         * Rota: get/entregas/:idEntrega
+         * @asyn
+         * 
+         * @param {Request} req Objeto da requisição HTTP
+         * @param {Response} res Objeto da resposta HTTP
+         * @returns {Promise<Array>Object>>} Conteudo com os dados da requisição
+         */
     listarEntregas: async (req, res) => {
         try {
             const entregas = await entregasModel.selecionarTodasEntregas();

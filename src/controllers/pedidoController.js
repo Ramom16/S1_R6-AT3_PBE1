@@ -3,6 +3,15 @@ const { entregasModel } = require('../models/entregasModel');
 const calculo = require('../services/calculoEntrega');
 
 const pedidoController = {
+    /**
+     * Cria um novo item no banco de dados
+     * Rota: post/pedidos
+     * @async
+     * @function criarPedido
+     * @param {Request} req Objeto da requisição HTTP
+     * @param {Response} res Objeto da resposta HTTP
+     * @returns {Promise<Object>} Retorna objeto contendo as informações sobre o resultado do insert
+     */
     criarPedido: async (req, res) => {
         try {
             const { idCliente, dataPedido, tipoEntrega, distanciaKm, pesoKg, valorBaseKm, valorBaseKg } = req.body;

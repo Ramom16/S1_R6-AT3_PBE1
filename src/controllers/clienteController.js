@@ -1,7 +1,15 @@
 const { clienteModel } = require('../models/clienteModel');
 
 const clienteController = {
-
+    /**
+         * Cria um novo cliente no banco de dados
+         * Rota: post/produtos/
+         * @async
+         * @function criarCliente
+         * @param {Request} req Objeto da requisição HTTP
+         * @param {Response} res Objeto da resposta HTTP
+         * @returns {Promise<Object>} Retorna objeto contendo as informações sobre o resultado do insert
+         */
     criarCliente: async (req, res) => {
         try {
             const { nome_completo, cpf, telefone, email, enderecoCompleto } = req.body;
@@ -44,7 +52,15 @@ const clienteController = {
         }
     },
 
-
+    /**
+         * Retorna os clientes cadastrados no banco de dados
+         * Rota: get/clientes
+         * @asyn
+         * 
+         * @param {Request} req Objeto da requisição HTTP
+         * @param {Response} res Objeto da resposta HTTP
+         * @returns {Promise<Array>Object>>} Conteudo com os dados da requisição
+         */
     listarClientes: async (req, res) => {
         try {
             const clientes = await clienteModel.selecionarTodosClientes();
@@ -57,7 +73,15 @@ const clienteController = {
         }
     },
 
-
+    /**
+         * Retorna o produto referente ao idCliente pesquisado
+         * Rota: get/clientes/:idClientes
+         * @asyn
+         * @function buscarClientePorId
+         * @param {Request} req Objeto da requisição HTTP
+         * @param {Response} res Objeto da resposta HTTP
+         * @returns {Promise<Array>Object>>} Conteudo com os dados da requisição
+         */
     buscarClientePorId: async (req, res) => {
         try {
             const { idCliente } = req.params;
@@ -80,7 +104,15 @@ const clienteController = {
         }
     },
 
-
+    /**
+             * Atualiza o cliente 
+             * Rota: get/clientes/:idClientes
+             * @asyn
+             * @function atualizarCliente
+             * @param {Request} req Objeto da requisição HTTP
+             * @param {Response} res Objeto da resposta HTTP
+             * @returns {Promise<Array>Object>>} Conteudo com os dados da requisição
+             */
     atualizarCliente: async (req, res) => {
         try {
             const { idCliente } = req.params;
@@ -116,7 +148,15 @@ const clienteController = {
         }
     },
 
-
+    /**
+                 * Deleta o cliente 
+                 * Rota: get/clientes/:idClientes
+                 * @asyn
+                 * @function deletarCliente
+                 * @param {Request} req Objeto da requisição HTTP
+                 * @param {Response} res Objeto da resposta HTTP
+                 * @returns {Promise<Array>Object>>} Conteudo com os dados da requisição
+                 */
     deletarCliente: async (req, res) => {
         try {
             const { idCliente } = req.params;
