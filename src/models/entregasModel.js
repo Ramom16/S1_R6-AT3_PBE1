@@ -67,7 +67,7 @@ const entregasModel = {
     },
 
     /**
-     * Atualiza o status de uma entrega (ex: "calculado", "enviado", "entregue", etc.)
+     * Atualiza o status de uma entrega (ex: "calculado", "entregue", "em transito", "cancelado" etc.)
      *
      * @async
      * @param {number} idEntrega - ID da entrega
@@ -87,12 +87,12 @@ const entregasModel = {
      *   changedRows: 1
      * }
      */
-    atualizarStatus: async (idEntrega, novoStatus) => {
+    atualizarStatus: async (idEntregas, novoStatus) => {
         const sql = `
             UPDATE entregas SET statusEntrega = ?
             WHERE idEntregas = ?
         `;
-        const [rows] = await pool.query(sql, [novoStatus, idEntrega]);
+        const [rows] = await pool.query(sql, [novoStatus, idEntregas]);
         return rows;
     },
 

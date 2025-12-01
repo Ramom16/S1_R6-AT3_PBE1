@@ -5,6 +5,6 @@ const router = express.Router();
 
 router.get('/entregas', entregasController.listarEntregas);
 router.get('/entregas/:idEntrega', entregasController.buscarEntrega);
-router.put('/entregas/:idEntrega/status', entregasController.atualizarStatus);
+router.put('/entregas/status/:idEntrega', entregasController.atualizarStatus);
 
 module.exports = router;
